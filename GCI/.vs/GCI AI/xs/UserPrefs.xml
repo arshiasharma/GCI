@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{3CE4BDEB-42FC-76B1-7027-4DE0AB910A54}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Car_Controls.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Car_Controls.cs" Line="23" Column="39" />
+      <File FileName="../CarSteering.cs" />
+      <File FileName="Assets/Scripts/trackController.cs" Line="24" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1555e07c-1b93-4368-ae1b-7bed49aa3010" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
