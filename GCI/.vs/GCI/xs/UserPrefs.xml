@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{ACF3A4C7-BA73-A2A7-BA53-0F9321B6F4E2}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/countdown.cs">
+    <Files>
+      <File FileName="Assets/Scripts/timer.cs" Line="6" Column="19" />
+      <File FileName="Assets/Scripts/countdown.cs" Line="6" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6d2a41a7-26b3-4642-b359-e8f33e17c747" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
