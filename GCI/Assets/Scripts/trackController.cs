@@ -9,7 +9,7 @@ public class trackController : MonoBehaviour
     public float Acceleration;
     public float Decceleration;
     public float MaxSpeed;
-    public float DragDecceleration;
+    public float DragCap; // The max speed reachable due to drag
     float oldOffset = 0F;
     float drag = 0F;
     public Text textbox;
@@ -26,12 +26,12 @@ public class trackController : MonoBehaviour
     {
         //to accelerate and decelerate we need to change the offset
         //offset should never be decreasing so we just keep updating oldOffset
-        offset = new Vector2(0, oldOffset + speed);
-        oldOffset = oldOffset + speed;
+        offset = new Vector2(0, oldOffset + (float)(speed*0.0002));
+        oldOffset = oldOffset + (float)(speed * 0.0002);
         //Debug.Log(oldOffset);
         GetComponent<Renderer>().material.mainTextureOffset = offset;
-        //this block of if statements gets the input from keyboard and decides to either accelerate,
-        //decelerate or slow down due to drag (when youre not on the gas the car slows down so I tried to make this realistic.
+        
+            // Up Arrow -> Constant Acceleration
         if (Input.GetKey("up"))
         {
             speed = speed + Acceleration * Time.deltaTime;
@@ -41,7 +41,7 @@ public class trackController : MonoBehaviour
             }
         }
 
-
+            // Down Arrow -> Constant deceleration
         else if (Input.GetKey("down"))
         {
             speed = speed - Decceleration * Time.deltaTime;
@@ -50,18 +50,20 @@ public class trackController : MonoBehaviour
                 speed = 0;
             }
         }
-        else
+
+        // Regardless of control, apply a drag based on current speed over max speed. This will be a more realistic way to cap the max speed
+        drag = (speed / DragCap) * Acceleration;
+        speed = speed - drag * Time.deltaTime;
+        if (speed <= 0)
         {
-            drag = speed / MaxSpeed * DragDecceleration;
-            speed = speed - drag * Time.deltaTime;
-            if (speed <= 0)
-            {
-                speed = 0;
-            }
+            speed = 0;
         }
-        //textbox.text = speed.ToString();
-        // Debug.Log(speed);
+
+        // Update the MPH textbox with correct speed
+        textbox.text = Mathf.Round(speed).ToString();
+
     }
+
 
 
 
