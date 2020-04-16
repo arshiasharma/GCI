@@ -55,10 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Car_Controls.cs" />
-     <Compile Include="Assets\Scripts\carCollision.cs" />
+     <Compile Include="Assets\Scripts\Car\Car_Controls.cs" />
+     <Compile Include="Assets\Scripts\Car\collision.cs" />
+     <Compile Include="Assets\Scripts\Car\trackController.cs" />
      <Compile Include="Assets\Scripts\countdown.cs" />
-     <Compile Include="Assets\Scripts\trackController.cs" />
+     <Compile Include="Assets\Scripts\errorTriggers\acceleration.cs" />
+     <Compile Include="Assets\Scripts\errorTriggers\correctLane.cs" />
+     <Compile Include="Assets\Scripts\errorTriggers\laneChange.cs" />
+     <Compile Include="Assets\Scripts\errorTriggers\speedLimit.cs" />
+     <Compile Include="Assets\Scripts\errorTriggers\weaving.cs" />
      <None Include="Assets\Sprites\cars\README.txt" />
      <None Include="Assets\Sprites\Topdown_vehicle_sprites_pack\Read Me.txt" />
  <Reference Include="Unity.Timeline.Editor">
