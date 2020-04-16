@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 //
 // laneChange.cs - Is the car drifting or riding in between the lanes too much?
+//
+
+// Error score is based on time in seconds being on a lane divider
+
 public class laneChange : MonoBehaviour
 {
 

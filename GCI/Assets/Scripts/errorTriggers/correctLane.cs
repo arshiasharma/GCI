@@ -6,6 +6,8 @@ using UnityEngine;
 // correctLane.cs - Tracking if the car is driving off acceptable road
 //
 
+// Error score is based on time in seconds spent off acceptable road(on the legal road between yellow lines)
+
 public class correctLane : MonoBehaviour
 {
 

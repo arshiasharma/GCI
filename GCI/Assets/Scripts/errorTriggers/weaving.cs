@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//
+// weaving.cs - Is the car turning frequently on a straightaway for no reason?(not changing lanes)
+//
+
+// Error score based on seconds spent turning without changing lanes
 
 public class weaving : MonoBehaviour
 {
