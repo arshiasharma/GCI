@@ -15,7 +15,7 @@ public class weaving : MonoBehaviour
 
     public float offsetErrorDegrade; // How fast does the error score recover? High means that shift history will be ignored
     private float offset;
-    private float netOffset;
+    private float errorScore;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class weaving : MonoBehaviour
         centerDividerCollider = centerDivider.GetComponent<BoxCollider2D>();
 
         offset = 0F;
-        netOffset = 0F;
+        errorScore = 0F;
     }
 
     // Update is called once per frame
@@ -44,30 +44,25 @@ public class weaving : MonoBehaviour
             offset *= -1;
         }
 
-        netOffset += offset - offsetErrorDegrade * Time.deltaTime;
+        errorScore += offset - offsetErrorDegrade * Time.deltaTime;
         offset = 0F;
 
-        // if the car is changing lanes, ignore weaving
-        if (carCollider.IsTouching(centerDividerCollider))
-        {
-            netOffset = 0F;
-        }
-
         // threshold for whether an incident is considered weaving
-        if (netOffset > 3)
+        if (errorScore > 3)
         {
             Debug.Log("Weaving Detected");
-            netOffset = 0F;
+            errorScore = 0F;
         }
-        else if (netOffset < 0)
+        else if (errorScore < 0)
         {
-            netOffset = 0;
+            errorScore = 0;
         }
     }
 
+    // if the car is changing lanes, ignore the offset score
     public void isChangingLane()
     {
-        netOffset = 0F;
+        errorScore = 0F;
     }
 }
 
