@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Car
   - Barrier
+  - Divider
+  - Boundary
   layers:
   - Default
   - TransparentFX
