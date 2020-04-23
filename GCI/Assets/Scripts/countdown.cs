@@ -5,19 +5,37 @@ using UnityEngine.UI;
 
 public class countdown : MonoBehaviour
 {
-	public float timeStart = 60;
+	public float timeStart = 5;
 	public Text textBox;
+	public Text endText;
+	public GameObject track;
 
 	// Use this for initialization
 	void Start()
 	{
 		textBox.text = timeStart.ToString();
+		endText.text = "";
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		timeStart -= Time.deltaTime;
-		textBox.text = Mathf.Round(timeStart).ToString();
+
+        if(timeStart > 0)
+        {
+			timeStart -= Time.deltaTime;
+			textBox.text = Mathf.Round(timeStart).ToString();
+		}
+		
+
+        else
+        {
+			endText.text = "Simulation Over";
+			timeStart = 0;
+			Time.timeScale = 0;
+			track.GetComponent<trackController>().track = true;
+        }
 	}
+
+    
 }

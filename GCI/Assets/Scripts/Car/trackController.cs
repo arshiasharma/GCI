@@ -14,6 +14,8 @@ public class trackController : MonoBehaviour
     float drag = 0F;
     public Text textbox;
 
+    public bool track = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -61,6 +63,12 @@ public class trackController : MonoBehaviour
 
         // Update the MPH textbox with correct speed
         textbox.text = Mathf.Round(speed).ToString();
+
+        // if simulation is over, stop the car
+        if (track)
+        {
+            speed = 0;
+        }
 
     }
 
